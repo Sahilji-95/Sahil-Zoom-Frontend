@@ -17,8 +17,9 @@ import { height, width } from "@mui/system";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import SendIcon from "@mui/icons-material/Send";
+import server from "../envoirment";
 
-const server_url = "http://localhost:8000";
+const server_url = server;
 
 let connection = {};
 const peerConfigConnection = {
