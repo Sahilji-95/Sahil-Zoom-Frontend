@@ -1,0 +1,65 @@
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/public/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.landingPageContainer nav {
+  padding-inline: 1.9rem;
+  padding-block: 1.4rem;
+  background-color: rgba(30, 31, 46, 0.805);
+  display: flex;
+  justify-content: space-between;
+}
+.landingPageContainer nav .navLogo {
+  margin-left: 1rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.landingPageContainer nav .navLogo :hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.landingPageContainer nav .navList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+.landingPageContainer nav .navList p {
+  margin-right: 1rem;
+  font-weight: 600;
+}
+.landingPageContainer nav .navList:hover {
+  cursor: pointer;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  height: 70vh;
+  align-items: center;
+}
+
+.hero-section .text-section {
+  margin-top: 20vh;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+}
+.hero-section .text-section h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section > div:nth-child(2) img {
+  margin-top: 20vh;
+  height: 50vh;
+  width: auto;
+  margin-right: 5rem;
+}
