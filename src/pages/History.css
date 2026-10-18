@@ -1,0 +1,160 @@
+/* ========================================
+   HISTORY PAGE
+======================================== */
+
+.historyPage {
+  min-height: 100vh;
+  padding: 30px 6%;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(217, 117, 0, 0.1), transparent 35%),
+    linear-gradient(135deg, #10111f, #191a2d, #11121e);
+  color: #ffffff;
+}
+
+/* Back Button */
+
+.historyPage .MuiIconButton-root {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 25px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #ff9839;
+  transition: background-color 0.2s ease;
+}
+
+.historyPage .MuiIconButton-root:hover {
+  background: rgba(255, 152, 57, 0.1);
+}
+
+.historyPage .MuiIconButton-root p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Meeting History Cards */
+
+.historyPage .MuiCard-root {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 16px;
+  border: 1px solid #303248;
+  border-radius: 14px;
+  background: rgba(25, 26, 43, 0.95);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.historyPage .MuiCard-root:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 152, 57, 0.5);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.historyPage .MuiCardContent-root {
+  padding: 22px 24px;
+}
+
+.historyPage .MuiCardContent-root:last-child {
+  padding-bottom: 22px;
+}
+
+/* Meeting Code */
+
+.historyPage .MuiTypography-root:first-child {
+  color: #ffb66e;
+  font-size: 0.95rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Meeting Date */
+
+.historyPage .MuiCardContent-root .MuiTypography-root:last-child {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: #aeb1c5;
+  font-size: 0.9rem;
+}
+
+/* Empty History Message */
+
+.historyPage > h3 {
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  border: 1px dashed #393b51;
+  border-radius: 14px;
+  color: #aeb1c5;
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-align: center;
+  background: rgba(25, 26, 43, 0.65);
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .historyPage {
+    padding: 25px 5%;
+  }
+
+  .historyPage .MuiCardContent-root {
+    padding: 19px;
+  }
+
+  .historyPage .MuiCardContent-root:last-child {
+    padding-bottom: 19px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .historyPage {
+    padding: 20px 16px;
+  }
+
+  .historyPage .MuiIconButton-root {
+    margin-bottom: 20px;
+  }
+
+  .historyPage .MuiCard-root {
+    margin-bottom: 13px;
+    border-radius: 12px;
+  }
+
+  .historyPage .MuiCardContent-root {
+    padding: 17px;
+  }
+
+  .historyPage .MuiCardContent-root:last-child {
+    padding-bottom: 17px;
+  }
+
+  .historyPage > h3 {
+    margin-top: 35px;
+    padding: 30px 15px;
+    font-size: 1rem;
+  }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .historyPage .MuiCard-root,
+  .historyPage .MuiIconButton-root {
+    transition: none;
+  }
+
+  .historyPage .MuiCard-root:hover {
+    transform: none;
+  }
+}

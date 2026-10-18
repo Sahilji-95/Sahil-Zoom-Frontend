@@ -1,0 +1,342 @@
+* {
+  box-sizing: border-box;
+}
+
+.authPage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 30px 20px;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 152, 57, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(99, 102, 241, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #10111f 0%, #191a2d 55%, #11121e 100%);
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #ffffff;
+}
+
+.authIllustration {
+  display: none !important;
+}
+
+.authFormPanel.MuiPaper-root {
+  width: 100%;
+  max-width: 460px;
+  min-height: auto;
+  margin: auto;
+  padding: 38px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(25, 26, 43, 0.96);
+  color: #ffffff;
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(255, 152, 57, 0.035);
+}
+
+.authBox {
+  width: 100%;
+  max-width: 390px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.authBrand {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.authBrandIcon {
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, #ff9839, #d97500);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(217, 117, 0, 0.22);
+}
+
+.authBrandIcon svg {
+  font-size: 29px;
+}
+
+.authBrand h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.9rem;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+}
+
+.authBrand h1 span {
+  color: #ff9839;
+}
+
+.authBrand p {
+  margin: 10px 0 0;
+  color: #aeb1c5;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.authTabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  padding: 5px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  background: #121321;
+}
+
+.authTab.MuiButton-root {
+  min-height: 43px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: #b6b8ca;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-transform: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.authTab.MuiButton-contained {
+  background: linear-gradient(100deg, #d97500, #f18a10);
+  color: #ffffff;
+  box-shadow: 0 3px 12px rgba(217, 117, 0, 0.17);
+}
+
+.authTab.MuiButton-contained:hover {
+  background: linear-gradient(100deg, #e98208, #ffa039);
+}
+
+.authTab.MuiButton-outlined {
+  border-color: transparent;
+  color: #b6b8ca;
+}
+
+.authTab.MuiButton-outlined:hover {
+  border-color: rgba(255, 152, 57, 0.3);
+  background: rgba(255, 152, 57, 0.06);
+}
+
+.authForm {
+  width: 100%;
+}
+
+.authForm .MuiFormControl-root {
+  margin-top: 11px;
+  margin-bottom: 11px;
+}
+
+.authForm .MuiInputLabel-root {
+  color: #aeb1c5;
+}
+
+.authForm .MuiInputLabel-root.Mui-focused {
+  color: #ff9839;
+}
+
+.authForm .MuiOutlinedInput-root {
+  min-height: 54px;
+  border-radius: 10px;
+  background: rgba(13, 14, 27, 0.58);
+  color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.authForm .MuiOutlinedInput-notchedOutline {
+  border-color: #36384e;
+}
+
+.authForm .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #696b83;
+}
+
+.authForm .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-width: 1.5px;
+  border-color: #ff9839;
+}
+
+.authForm .MuiInputBase-input {
+  color: #ffffff;
+}
+
+.authForm .MuiInputBase-input::placeholder {
+  color: #8589a1;
+}
+
+.authForm .MuiInputBase-input:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.authError {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 89, 89, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 70, 70, 0.08);
+  color: #ff8585;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.authSubmitButton.MuiButton-root {
+  min-height: 51px;
+  margin-top: 23px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  background: linear-gradient(100deg, #d97500, #f18a10);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 650;
+  text-transform: none;
+  box-shadow: 0 7px 20px rgba(217, 117, 0, 0.16);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.authSubmitButton.MuiButton-root:hover {
+  background: linear-gradient(100deg, #e98208, #ffa039);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(217, 117, 0, 0.24);
+}
+
+.authSubmitButton.MuiButton-root:active {
+  transform: translateY(0);
+}
+
+.authPage button:focus-visible {
+  outline: 2px solid #ffb66e;
+  outline-offset: 3px;
+}
+
+.authSwitchText {
+  margin: 15px 0 0;
+  color: #898da5;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .authFormPanel.MuiPaper-root {
+    max-width: 440px;
+    padding: 34px 30px;
+  }
+
+  .authBox {
+    max-width: 390px;
+  }
+}
+
+@media (max-width: 600px) {
+  .authPage {
+    padding: 22px 16px;
+    background:
+      radial-gradient(circle at top, rgba(217, 117, 0, 0.12), transparent 38%),
+      linear-gradient(135deg, #10111f, #191a2d);
+  }
+
+  .authFormPanel.MuiPaper-root {
+    width: 100%;
+    max-width: 430px;
+    padding: 30px 22px;
+    border-radius: 17px;
+  }
+
+  .authBrand {
+    margin-bottom: 24px;
+  }
+
+  .authBrandIcon {
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+  }
+
+  .authBrandIcon svg {
+    font-size: 26px;
+  }
+
+  .authBrand h1 {
+    font-size: 1.75rem;
+  }
+
+  .authBrand p {
+    font-size: 0.88rem;
+  }
+
+  .authForm .MuiOutlinedInput-root {
+    min-height: 52px;
+  }
+
+  .authSubmitButton.MuiButton-root {
+    min-height: 49px;
+  }
+}
+
+@media (max-width: 360px) {
+  .authPage {
+    padding: 16px 12px;
+  }
+
+  .authFormPanel.MuiPaper-root {
+    padding: 25px 16px;
+    border-radius: 14px;
+  }
+
+  .authBrand h1 {
+    font-size: 1.6rem;
+  }
+
+  .authBrand p {
+    font-size: 0.84rem;
+  }
+
+  .authTab.MuiButton-root {
+    font-size: 0.85rem;
+  }
+
+  .authSwitchText {
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .authTab.MuiButton-root,
+  .authSubmitButton.MuiButton-root {
+    transition: none;
+  }
+
+  .authSubmitButton.MuiButton-root:hover {
+    transform: none;
+  }
+}

@@ -49,13 +49,15 @@ function Home() {
       <div className="meetContainer">
         <div className="leftPanel">
           <div>
-            <h2>Providing Quality Video Call Just Like Quality Education</h2>
+            <h2>Providing Quality Video Call</h2>
+            <p>Enter Room Id</p>
             <div style={{ display: "flex", gap: "10px" }}>
               <TextField
+                placeholder="Enter meeting code"
                 onChange={(e) => setMeetingCode(e.target.value)}
                 id="outline"
                 variant="outlined"
-              ></TextField>
+              />
               <Button onClick={handleJoinVideoCall} variant="contained">
                 Join{" "}
               </Button>

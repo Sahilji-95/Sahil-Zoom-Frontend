@@ -6,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import IconButton from "@mui/material/IconButton";
+import "./History.css";
 
 export default function History() {
   const { getUserHistory } = useContext(AuthContext);
@@ -23,7 +24,7 @@ export default function History() {
     };
 
     getHistory();
-  }, []);
+  }, [getUserHistory]);
 
   let handleBack = () => {
     Navigate("/home");
@@ -38,11 +39,12 @@ export default function History() {
     return `${day}/${month}/${year}`;
   };
   return (
-    <div>
-      <IconButton onClick={handleBack}>
+    <div className="historyPage">
+      <IconButton onClick={handleBack} aria-label="Go back to home">
         <ArrowBackIcon />
         <p>Back</p>
       </IconButton>
+
       {meetings.length !== 0 ? (
         meetings.map((e, i) => {
           return (
@@ -54,7 +56,9 @@ export default function History() {
                 >
                   Code : {e.meetingCode}
                 </Typography>
-                <Typography variant="h5" component="div"></Typography>
+
+                <Typography variant="h5" component="div" />
+
                 <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
                   {formatDate(e.date)}
                 </Typography>
@@ -63,7 +67,7 @@ export default function History() {
           );
         })
       ) : (
-        <h3>Not history yet</h3>
+        <h3>No history yet</h3>
       )}
     </div>
   );

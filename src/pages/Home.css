@@ -1,35 +1,461 @@
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.navBar,
+.meetContainer {
+  color: #ffffff;
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
 .navBar {
-  background-color: #f7eeed;
-  padding: 20px;
+  min-height: 82px;
+  padding: 16px 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.navBar .logo {
-  font-size: 1.9rem;
+  gap: 20px;
+  background: #151626;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
-.meetContainer {
+.navBar .logo {
   display: flex;
-  padding-inline: 20px;
-  height: 80vh;
-  gap: 10vw;
+  align-items: center;
+}
+
+.navBar .logo h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.65rem;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.navBar .logo h3::first-letter {
+  color: #ff9839;
+}
+
+/* Navbar right-side controls */
+
+.navBar > div:last-child {
+  gap: 12px;
+}
+
+/* History button */
+
+.navBar .MuiIconButton-root {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #d8daea;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.navBar .MuiIconButton-root:hover {
+  color: #ff9839;
+  background: rgba(255, 152, 57, 0.09);
+}
+
+.navBar .MuiIconButton-root p {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+/* Logout button */
+
+.navBar .MuiButton-root {
+  min-height: 41px;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 152, 57, 0.4);
+  border-radius: 9px;
+  color: #ffb66e;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.navBar .MuiButton-root:hover {
+  border-color: #ff9839;
+  background: #d97500;
+  color: #ffffff;
+}
+
+/* ========================================
+   MAIN MEETING CONTAINER
+======================================== */
+
+.meetContainer {
+  min-height: calc(100vh - 82px);
+  width: 100%;
+  padding: 55px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 80% 45%,
+      rgba(217, 117, 0, 0.12),
+      transparent 42%
+    ),
+    linear-gradient(135deg, #10111f 0%, #191a2d 55%, #11121e 100%);
+}
+
+/* ========================================
+   LEFT PANEL
+======================================== */
+
+.leftPanel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.leftPanel {
-  height: 100%;
-  display: flex;
-  align-items: center;
+.leftPanel > div {
+  width: 100%;
+  max-width: 520px;
 }
 
+.leftPanel h2 {
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-size: clamp(2rem, 3.5vw, 3.3rem);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+}
+
+.leftPanel h2::first-letter {
+  color: #ff9839;
+}
+
+.leftPanel p {
+  margin: 0 0 15px;
+  color: #b7b9ca;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ========================================
+   MEETING CODE INPUT
+======================================== */
+
+.leftPanel .MuiTextField-root {
+  flex: 1;
+  min-width: 0;
+}
+
+.leftPanel .MuiOutlinedInput-root {
+  min-height: 52px;
+  border-radius: 10px;
+  background: rgba(13, 14, 27, 0.75);
+  color: #ffffff;
+}
+
+.leftPanel .MuiOutlinedInput-notchedOutline {
+  border-color: #393b51;
+}
+
+.leftPanel .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #777a91;
+}
+
+.leftPanel .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #ff9839;
+  border-width: 1.5px;
+}
+
+.leftPanel .MuiInputBase-input {
+  color: #ffffff;
+  padding: 14px;
+}
+
+.leftPanel .MuiInputBase-input::placeholder {
+  color: #898da5;
+}
+
+/* ========================================
+   JOIN BUTTON
+======================================== */
+
+.leftPanel .MuiButton-root {
+  min-width: 100px;
+  min-height: 52px;
+  padding: 12px 23px;
+  border-radius: 10px;
+  background: linear-gradient(100deg, #d97500, #f18a10);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 650;
+  text-transform: none;
+  box-shadow: 0 7px 20px rgba(217, 117, 0, 0.18);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.leftPanel .MuiButton-root:hover {
+  background: linear-gradient(100deg, #e98208, #ffa039);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(217, 117, 0, 0.27);
+}
+
+.leftPanel .MuiButton-root:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   RIGHT PANEL / IMAGE
+======================================== */
+
 .rightPanel {
+  flex: 1;
+  min-width: 0;
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.rightPanel::before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(217, 117, 0, 0.12);
+  filter: blur(65px);
 }
 
 .rightPanel > img {
-  width: 40vw;
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 490px;
+  max-height: 65vh;
   height: auto;
+  object-fit: contain;
   border-radius: 20px;
+  filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.25));
+  animation: imageFloat 5s ease-in-out infinite;
+}
+
+@keyframes imageFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .navBar {
+    padding-inline: 4%;
+  }
+
+  .meetContainer {
+    padding: 45px 5%;
+    gap: 25px;
+  }
+
+  .leftPanel h2 {
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+  }
+
+  .rightPanel > img {
+    max-width: 400px;
+  }
+
+  .leftPanel .MuiButton-root {
+    min-width: 85px;
+    padding-inline: 17px;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+  .navBar {
+    min-height: 70px;
+    padding: 13px 5%;
+    gap: 8px;
+  }
+
+  .navBar .logo h3 {
+    font-size: 1.3rem;
+  }
+
+  .navBar > div:last-child {
+    gap: 4px;
+  }
+
+  .navBar .MuiIconButton-root {
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .navBar .MuiIconButton-root p {
+    font-size: 0.8rem;
+  }
+
+  .navBar .MuiButton-root {
+    min-height: 37px;
+    padding: 6px 11px;
+    font-size: 0.8rem;
+  }
+
+  .meetContainer {
+    min-height: calc(100vh - 70px);
+    padding: 40px 6% 30px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .leftPanel {
+    width: 100%;
+    flex: none;
+    text-align: center;
+  }
+
+  .leftPanel > div {
+    max-width: 480px;
+  }
+
+  .leftPanel h2 {
+    margin-bottom: 14px;
+    font-size: clamp(2rem, 7vw, 2.7rem);
+    letter-spacing: -0.8px;
+  }
+
+  .leftPanel p {
+    margin-bottom: 13px;
+    font-size: 0.95rem;
+  }
+
+  .leftPanel .MuiTextField-root {
+    text-align: left;
+  }
+
+  .leftPanel .MuiOutlinedInput-root {
+    min-height: 48px;
+  }
+
+  .leftPanel .MuiInputBase-input {
+    padding: 12px;
+  }
+
+  .leftPanel .MuiButton-root {
+    min-width: 78px;
+    min-height: 48px;
+    padding: 10px 17px;
+    font-size: 0.92rem;
+  }
+
+  .rightPanel {
+    width: 100%;
+    flex: none;
+    min-height: 0;
+  }
+
+  .rightPanel > img {
+    width: min(82%, 330px);
+    max-height: 35vh;
+    border-radius: 15px;
+  }
+
+  .rightPanel::before {
+    width: 65%;
+    filter: blur(45px);
+  }
+}
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+  .navBar .logo h3 {
+    font-size: 1.12rem;
+  }
+
+  .navBar .MuiIconButton-root {
+    padding: 6px;
+  }
+
+  .navBar .MuiIconButton-root p {
+    font-size: 0.74rem;
+  }
+
+  .navBar .MuiButton-root {
+    padding-inline: 8px;
+    font-size: 0.75rem;
+  }
+
+  .meetContainer {
+    padding-inline: 5%;
+    gap: 20px;
+  }
+
+  .leftPanel h2 {
+    font-size: 1.85rem;
+  }
+
+  .leftPanel .MuiButton-root {
+    min-width: 68px;
+    padding-inline: 12px;
+  }
+
+  .rightPanel > img {
+    width: 78%;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .rightPanel > img {
+    animation: none;
+  }
+
+  .leftPanel .MuiButton-root {
+    transition: none;
+  }
 }

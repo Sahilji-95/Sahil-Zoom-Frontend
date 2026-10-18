@@ -13,7 +13,6 @@ import MicOffIcon from "@mui/icons-material/MicOff";
 import ScreenShareIcon from "@mui/icons-material/ScreenShare";
 import StopScreenShareIcon from "@mui/icons-material/StopScreenShare";
 import ChatIcon from "@mui/icons-material/Chat";
-import { height, width } from "@mui/system";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import SendIcon from "@mui/icons-material/Send";
@@ -475,10 +474,11 @@ export default function VideoMeet() {
   };
 
   return (
-    <div>
+    <div className="videoMeetPage">
       {askForUsername === true ? (
-        <div>
-          <h2>Enter the Lobby</h2>
+        <div className="lobbyContainer">
+          <h2 className="lobbyTitle">Enter the Lobby</h2>
+
           <TextField
             id="outlined-basic"
             label="Username"
@@ -488,12 +488,12 @@ export default function VideoMeet() {
               setUserName(e.target.value);
             }}
           />
-          <br />
+
           <Button variant="contained" onClick={connect}>
             Join
           </Button>
 
-          <div>
+          <div className="lobbyVideo">
             <video ref={localVideoRef} autoPlay muted></video>
           </div>
         </div>
@@ -503,6 +503,7 @@ export default function VideoMeet() {
             <div className="chatRoom">
               <div className="chatContainer">
                 <h1>Chat</h1>
+
                 <div className="chattingDisplay">
                   {messages.length > 0 ? (
                     messages.map((item, index) => {
@@ -517,6 +518,7 @@ export default function VideoMeet() {
                     <p>No msg Yet</p>
                   )}
                 </div>
+
                 <div className="chattingArea">
                   <TextField
                     id="filled-basic"
@@ -525,6 +527,7 @@ export default function VideoMeet() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                   />
+
                   <button onClick={sendMessage}>
                     <SendIcon />
                   </button>
@@ -534,13 +537,16 @@ export default function VideoMeet() {
           ) : (
             <></>
           )}
+
           <div className="buttonContainer">
             <IconButton onClick={handleVideo}>
               {video === true ? <VideocamIcon /> : <VideocamOffIcon />}
             </IconButton>
+
             <IconButton onClick={handleAudio}>
               {audio === true ? <MicIcon /> : <MicOffIcon />}
             </IconButton>
+
             {screenAvalible === true ? (
               <IconButton onClick={handleScreen}>
                 {screen === true ? (
@@ -552,9 +558,11 @@ export default function VideoMeet() {
             ) : (
               <></>
             )}
+
             <IconButton onClick={handleEndCall}>
               <CallEndIcon style={{ color: "red" }} />
             </IconButton>
+
             <Badge badgeContent={newMessages} max={999} color="primary">
               <IconButton
                 onClick={() => {
@@ -565,15 +573,17 @@ export default function VideoMeet() {
               </IconButton>
             </Badge>
           </div>
+
           <video
             className="meetUserVideo"
             ref={localVideoRef}
             autoPlay
             muted
           ></video>
+
           <div className="confrenceView">
             {videos.map((video) => (
-              <div key={video.socketId}>
+              <div className="participantVideo" key={video.socketId}>
                 <video
                   data-socket={video.socketId}
                   ref={(ref) => {
